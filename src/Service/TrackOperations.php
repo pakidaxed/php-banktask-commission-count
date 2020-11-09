@@ -9,7 +9,7 @@ use Exception;
 class TrackOperations
 {
     // PROPERTIES
-    private static float $freeOfCharge = 1000; // Free cash out money in one week
+    private const FREE_OF_CHARGE = 1000; // Free cash out money in one week
 
     /**
      * Tracking the operations data, and counting by weeks for each user and checking for the
@@ -44,9 +44,9 @@ class TrackOperations
 
         if (!isset($_SESSION['user'][$year][$week][$userId])) {
             $_SESSION['user'][$year][$week][$userId]['operations'] = 1;
-            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] = self::$freeOfCharge;
+            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] = self::FREE_OF_CHARGE;
             $_SESSION['user'][$year][$week][$userId]['discount'] = $_SESSION['user'][$year][$week][$userId]['free_cash_out'] > $amount_euros ? $amount_euros : $_SESSION['user'][$year][$week][$userId]['free_cash_out'];
-            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -= $amount_euros > self::$freeOfCharge ? self::$freeOfCharge : $amount_euros;
+            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -= $amount_euros > self::FREE_OF_CHARGE ? self::FREE_OF_CHARGE : $amount_euros;
         } else {
             $_SESSION['user'][$year][$week][$userId]['operations']++;
             $_SESSION['user'][$year][$week][$userId]['discount'] = $_SESSION['user'][$year][$week][$userId]['free_cash_out'];

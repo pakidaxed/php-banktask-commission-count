@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd4a48e4-3cd1-4090-b7dc-78dc7d5bbc94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Operation/CashIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/CashIn.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Operation/CashOut.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/CashOut.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CurrencyConvert.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CurrencyConvert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/TrackOperations.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TrackOperations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Operation/CashOutTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Operation/CashOutTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604482870700</updated>
       <workItem from="1604482871793" duration="46889000" />
-      <workItem from="1604917467572" duration="1769000" />
+      <workItem from="1604917467572" duration="3327000" />
     </task>
     <servers />
   </component>

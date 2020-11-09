@@ -7,9 +7,9 @@ namespace BankTask\Task\Service;
 class CurrencyConvert
 {
     // PROPERTIES
-    private static float $EUR = 1;
-    private static float $USD = 1.1497;
-    private static float $JPY = 129.53;
+    private const EUR = 1;
+    private const USD = 1.1497;
+    private const JPY = 129.53;
 
     /**
      * Converting FROM
@@ -20,7 +20,7 @@ class CurrencyConvert
      */
     public static function convertFrom(float $amount, string $currency): float
     {
-        return $amount / self::$$currency;
+        return $amount / constant("self::$currency");
     }
 
     /**
@@ -32,7 +32,7 @@ class CurrencyConvert
      */
     public static function convertTo(float $amount, string $currency): float
     {
-        return $amount * self::$$currency;
+        return $amount * constant("self::$currency");
     }
 
 }

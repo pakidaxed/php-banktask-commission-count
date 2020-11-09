@@ -8,8 +8,8 @@ namespace BankTask\Task\Operation;
 class CashIn
 {
     // PROPERTIES
-    private static float $feePercent = 0.03; // Commission percent %
-    private static float $maxFeeAmount = 5; // Maximum free amount to charge
+    private const FEE_PERCENT = 0.03; // Commission percent %
+    private const MAX_FEE_AMOUNT = 5; // Maximum free amount to charge
 
     /**
      * Counting CASH IN commissions
@@ -19,7 +19,7 @@ class CashIn
      */
     public static function countCommission(float $amount): float
     {
-        $commission = self::$feePercent / 100 * $amount;
-        return $commission > self::$maxFeeAmount ? self::$maxFeeAmount : $commission;
+        $commission = self::FEE_PERCENT / 100 * $amount;
+        return $commission > self::MAX_FEE_AMOUNT ? self::MAX_FEE_AMOUNT : $commission;
     }
 }

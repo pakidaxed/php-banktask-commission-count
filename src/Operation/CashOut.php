@@ -9,11 +9,11 @@ use BankTask\Task\Service\CurrencyConvert;
 class CashOut
 {
     // PROPERTIES NATURAL
-    private static float $feeNatural = 0.3; // Commission percent for Natural clients
+    private const FEE_NATURAL = 0.3; // Commission percent for Natural clients
 
     // PROPERTIES LEGAL
-    private static float $feeLegal = 0.3; // Commission percent for Legal clients
-    private static float $minPerOperation = 0.5; // Minimum amount per operation for Legal clients
+    private const FEE_LEGAL = 0.3; // Commission percent for Legal clients
+    private const MIN_PER_OPERATION = 0.5; // Minimum amount per operation for Legal clients
 
 
     /**
@@ -35,7 +35,7 @@ class CashOut
         }
 
         if ($currency !== 'EUR') $amount = CurrencyConvert::convertTo($amount, $currency);
-        $commission = self::$feeNatural / 100 * $amount;
+        $commission = self::FEE_NATURAL / 100 * $amount;
 
         return round(ceil($commission * 100)) / 100;
 
@@ -52,9 +52,9 @@ class CashOut
     {
         $amount = CurrencyConvert::convertFrom($amount, $currency);
 
-        $commission = self::$feeLegal / 100 * $amount;
+        $commission = self::FEE_LEGAL / 100 * $amount;
 
-        return $commission < self::$minPerOperation ? self::$minPerOperation : $commission;
+        return $commission < self::MIN_PER_OPERATION ? self::MIN_PER_OPERATION : $commission;
     }
 
 }

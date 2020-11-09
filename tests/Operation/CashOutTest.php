@@ -12,11 +12,12 @@ class CashOutTest extends TestCase
     public function testCountCommissionNatural()
     {
         $result = CashOut::countCommissionNatural(1200.00, 'EUR', ['operations' => 1, 'discount' => 1000]);
+
         $this->assertEquals(0.6, $result);
     }
     public function testCountCommissionLegal()
     {
-        $result = CashOut::countCommissionLegal(100.00, 'EUR', ['operations' => 1, 'discount' => 1000]);
+        $result = CashOut::countCommissionLegal(100.00, 'EUR');
         $this->assertEquals(0.5, $result);
     }
 }
