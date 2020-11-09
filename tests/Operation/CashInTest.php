@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BankTask\Tests\Operation;
-
 
 use BankTask\Task\Operation\CashIn;
 use PHPUnit\Framework\TestCase;

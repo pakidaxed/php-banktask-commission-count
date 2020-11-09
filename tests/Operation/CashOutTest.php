@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BankTask\Tests\Operation;
-
 
 use BankTask\Task\Operation\CashOut;
 use PHPUnit\Framework\TestCase;
@@ -13,7 +11,7 @@ class CashOutTest extends TestCase
     {
         $result = CashOut::countCommissionNatural(1200.00, 'EUR', ['operations' => 1, 'discount' => 1000]);
 
-        $this->assertNotEquals(0, $result);
+        $this->assertStringMatchesFormat('%f', (string)$result);
     }
     public function testCountCommissionLegal()
     {

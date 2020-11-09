@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BankTask\Tests\Task;
-
 
 use BankTask\Task\Task\CommissionCount;
 use PHPUnit\Framework\TestCase;
