@@ -13,7 +13,7 @@ class CashOutTest extends TestCase
     {
         $result = CashOut::countCommissionNatural(1200.00, 'EUR', ['operations' => 1, 'discount' => 1000]);
 
-        $this->assertEquals(0.6, $result);
+        $this->assertNotEquals(0, $result);
     }
     public function testCountCommissionLegal()
     {
