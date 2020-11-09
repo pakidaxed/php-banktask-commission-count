@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace BankTask\Task\Operation;
 
-
 class CashIn
 {
     // PROPERTIES

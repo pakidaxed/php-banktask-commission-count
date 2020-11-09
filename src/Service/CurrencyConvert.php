@@ -34,5 +34,4 @@ class CurrencyConvert
     {
         return $amount * constant("self::$currency");
     }
-
 }

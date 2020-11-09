@@ -11,14 +11,14 @@ use Exception;
 
 class CommissionCount
 {
-    private int    $userId;
+    private int $userId;
     private string $userType;
     private string $operation;
-    private float  $amount;
+    private float $amount;
     private string $currency;
     private string $date;
 
-    private float  $commission;
+    private float $commission;
 
     public function __construct($operationData)
     {
@@ -43,7 +43,6 @@ class CommissionCount
         }
 
         if ($this->operation === 'cash_out') {
-
             $operation = TrackOperations::trackWeekly($this->userId, $this->date, $this->amount, $this->currency);
 
             if ($this->userType === 'natural') {
@@ -56,5 +55,4 @@ class CommissionCount
 
         return $this->commission;
     }
-
 }

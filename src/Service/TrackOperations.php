@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace BankTask\Task\Service;
@@ -33,7 +34,9 @@ class TrackOperations
         $year = $date->format("Y");
         $week = $date->format("W");
 
-        if ($single_month == '12' && $week == '01') $year++;
+        if ($single_month == '12' && $week == '01') {
+            $year++;
+        }
         // End of getting date
 
         $amount_euros = CurrencyConvert::convertFrom($amount, $currency);
@@ -45,12 +48,19 @@ class TrackOperations
         if (!isset($_SESSION['user'][$year][$week][$userId])) {
             $_SESSION['user'][$year][$week][$userId]['operations'] = 1;
             $_SESSION['user'][$year][$week][$userId]['free_cash_out'] = self::FREE_OF_CHARGE;
-            $_SESSION['user'][$year][$week][$userId]['discount'] = $_SESSION['user'][$year][$week][$userId]['free_cash_out'] > $amount_euros ? $amount_euros : $_SESSION['user'][$year][$week][$userId]['free_cash_out'];
-            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -= $amount_euros > self::FREE_OF_CHARGE ? self::FREE_OF_CHARGE : $amount_euros;
+            $_SESSION['user'][$year][$week][$userId]['discount'] =
+                $_SESSION['user'][$year][$week][$userId]['free_cash_out'] > $amount_euros
+                    ? $amount_euros : $_SESSION['user'][$year][$week][$userId]['free_cash_out'];
+            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -=
+                $amount_euros > self::FREE_OF_CHARGE ? self::FREE_OF_CHARGE : $amount_euros;
         } else {
             $_SESSION['user'][$year][$week][$userId]['operations']++;
-            $_SESSION['user'][$year][$week][$userId]['discount'] = $_SESSION['user'][$year][$week][$userId]['free_cash_out'];
-            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -= $amount_euros > $_SESSION['user'][$year][$week][$userId]['free_cash_out'] ? $_SESSION['user'][$year][$week][$userId]['free_cash_out'] : $amount_euros;
+            $_SESSION['user'][$year][$week][$userId]['discount'] =
+                $_SESSION['user'][$year][$week][$userId]['free_cash_out'];
+            $_SESSION['user'][$year][$week][$userId]['free_cash_out'] -=
+                $amount_euros > $_SESSION['user'][$year][$week][$userId]['free_cash_out']
+                    ? $_SESSION['user'][$year][$week][$userId]['free_cash_out']
+                    : $amount_euros;
         }
 
         return [

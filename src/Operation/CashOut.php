@@ -34,11 +34,12 @@ class CashOut
             $amount = $amount < 0 ? 0 : $amount;
         }
 
-        if ($currency !== 'EUR') $amount = CurrencyConvert::convertTo($amount, $currency);
+        if ($currency !== 'EUR') {
+            $amount = CurrencyConvert::convertTo($amount, $currency);
+        }
         $commission = self::FEE_NATURAL / 100 * $amount;
 
         return round(ceil($commission * 100)) / 100;
-
     }
 
     /**
@@ -56,5 +57,4 @@ class CashOut
 
         return $commission < self::MIN_PER_OPERATION ? self::MIN_PER_OPERATION : $commission;
     }
-
 }
