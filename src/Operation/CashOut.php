@@ -31,6 +31,7 @@ class CashOut
 
         if ($operation['operations'] <= 3) {
             $amount = $amount - $operation['discount'];
+            $amount = $amount < 0 ? 0 : $amount;
         }
 
         if ($currency !== 'EUR') $amount = CurrencyConvert::convertTo($amount, $currency);
