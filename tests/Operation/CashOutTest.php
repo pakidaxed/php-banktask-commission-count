@@ -9,9 +9,8 @@ class CashOutTest extends TestCase
 {
     public function testCountCommissionNatural()
     {
-        $result = CashOut::countCommissionNatural(1200.00, 'EUR', ['operations' => 1, 'discount' => 1000]);
-
-        $this->assertStringMatchesFormat('%f', (string)$result);
+        $result = CashOut::countCommissionNatural(1200.00, 'EUR', ['operations' => 1, 'discount' => 1000], 0.3);
+        $this->assertEquals(0.6, $result);
     }
     public function testCountCommissionLegal()
     {

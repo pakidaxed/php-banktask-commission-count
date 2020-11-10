@@ -9,7 +9,7 @@ use BankTask\Task\Service\CurrencyConvert;
 class CashOut
 {
     // PROPERTIES NATURAL
-    private const FEE_NATURAL = 0.3; // Commission percent for Natural clients
+    private const FEE_NATURAL = 0.4; // Commission percent for Natural clients
 
     // PROPERTIES LEGAL
     private const FEE_LEGAL = 0.3; // Commission percent for Legal clients
@@ -22,9 +22,10 @@ class CashOut
      * @param float $amount
      * @param string $currency
      * @param array $operation
+     * @param float $fee
      * @return float
      */
-    public static function countCommissionNatural(float $amount, string $currency, array $operation): float
+    public static function countCommissionNatural(float $amount, string $currency, array $operation, $fee = self::FEE_NATURAL): float
     {
 
         $amount = CurrencyConvert::convertFrom($amount, $currency);
@@ -37,7 +38,7 @@ class CashOut
         if ($currency !== 'EUR') {
             $amount = CurrencyConvert::convertTo($amount, $currency);
         }
-        $commission = self::FEE_NATURAL / 100 * $amount;
+        $commission = $fee / 100 * $amount;
 
         return round(ceil($commission * 100)) / 100;
     }

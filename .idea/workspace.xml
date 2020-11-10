@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd4a48e4-3cd1-4090-b7dc-78dc7d5bbc94" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Operation/CashInTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Operation/CashInTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Operation/CashOut.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Operation/CashOut.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Operation/CashOutTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Operation/CashOutTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Service/CurrencyConverterTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Service/CurrencyConverterTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Service/TrackOperationsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Service/TrackOperationsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Task/CommissionCountTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Task/CommissionCountTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +133,9 @@
       <updated>1604482870700</updated>
       <workItem from="1604482871793" duration="46889000" />
       <workItem from="1604917467572" duration="5690000" />
-      <workItem from="1604925772577" duration="4348000" />
+      <workItem from="1604925772577" duration="5000000" />
+      <workItem from="1604958433694" duration="599000" />
+      <workItem from="1605013638610" duration="1771000" />
     </task>
     <servers />
   </component>
